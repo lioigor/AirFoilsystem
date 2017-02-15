@@ -61,6 +61,7 @@
 	</div>
 <![endif]-->
 </head>
+
 <body id="page5">
 <div class="body1">
 	<div class="main">
@@ -90,7 +91,7 @@
 					</ul>
 				</nav>
 			</div>
-		</header><div class="ic">More <a href="http://www.templatemonster.com/">Website Templates</a> at TemplateMonster.com!</div>
+		</header>
 	
 		<div align="center">
 		<article id="content">
@@ -125,7 +126,7 @@
 		</article>
 	</div>
 </div>
- 
+</div> 
 
 <div class="body2">
 	<div class="main">
@@ -135,12 +136,12 @@
 				<form id="newsletter">
 					<div>
 						<div class="bg">
-							<input class="input" type="text" value="Type Your Email Here"  onblur="if(this.value=='') this.value='Type Your Email Here'" onFocus="if(this.value =='Type Your Email Here' ) this.value=''">
+							<input class="input" type="text" value="Type Your Email Here"  onblur="if(this.value=='') this.value='Type Your Email Here'" onfocus="if(this.value =='Type Your Email Here' ) this.value=''">
 						</div>
-						<a href="#" class="button" onClick="document.getElementById('ContactForm').submit()">Subscribe</a>
+						<a href="#" class="button" onclick="document.getElementById('ContactForm').submit()">Subscribe</a>
 					</div>
 				</form>
-       		</section>
+        	</section>
 			<section class="col_1">
 				<h3>Why Us?</h3>
 				<ul class="list1">
@@ -148,15 +149,16 @@
 					<li><a href="#">Many graphs, pictures</a></li>
 					<li><a href="#">Quickly and easily</a></li>
 				</ul>
-       		</section>
+        	</section>
 			<section class="col_2">
 				<h3>Follow Us</h3>
 				<ul id="icons">
-					<li><a href="#"><img src="images/icon1.jpg" alt="">Facebook</a></li>
-					<li><a href="#"><img src="images/icon2.jpg" alt="">Twitter</a></li>
-					<li><a href="#"><img src="images/icon3.jpg" alt="">LinkedIn</a></li>
+				
+					<li><a href="#"><img src="<c:url value="/images/icon1.jpg"/>" alt="">Facebook</a></li>
+					<li><a href="#"><img src="<c:url value="/images/icon2.jpg"/>" alt="">Twitter</a></li>
+					<li><a href="#"><img src="<c:url value="/images/icon3.jpg"/>" alt="">LinkedIn</a></li>
 				</ul>
-       		</section>
+        	</section>
 			<section class="col_1">
 				<h3>Address</h3>
 				<p class="address">
@@ -171,16 +173,33 @@
 				</p>
        		</section>
 		</article>
+<!-- / content -->
 	</div>
 </div>
 <div class="main">
 <!-- footer -->
 	<footer>
 		<colspan="3" align="center" valign="middle" bgcolor="#000000"><span class="text2">Copyright &copy; Igor Likarenko<br>
-		</article>
-<!-- / content -->
-	</div>
+		
+		
+		<!-- {%FOOTER_LINK} -->
+	</footer>
+<!-- / footer -->
 </div>
 <script type="text/javascript"> Cufon.now();</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#myRoundabout').roundabout({
+			 shape: 'square',
+        	 minScale: 0.89, // tiny!
+        	 maxScale: 1, // tiny!
+			 easing:'easeOutExpo',
+			 clickToFocus:'true',
+			 focusBearing:'0',
+			 duration:800,
+			 reflect:true
+		});
+	});
+</script>
 </body>
 </html>

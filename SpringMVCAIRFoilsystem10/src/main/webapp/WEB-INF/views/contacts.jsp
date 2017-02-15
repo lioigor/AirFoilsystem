@@ -62,7 +62,7 @@
 					</ul>
 				</nav>
 			</div>
-		</header><div class="ic">More <a href="http://www.templatemonster.com/">Website Templates</a> at TemplateMonster.com!</div>
+		</header>
 <!-- content -->
 		<article id="content">
 			
