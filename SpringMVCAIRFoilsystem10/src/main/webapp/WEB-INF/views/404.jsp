@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Measurement results</title>
+<title>Error!</title>
 
 <meta charset="utf-8">
 
@@ -54,11 +54,11 @@
 				<span class="date">Monday, June 6, 2011  &nbsp; &nbsp; 17:19</span>
 			</div>
 			<div class="wrapper">
-				<h1><a href="${pageContext.request.contextPath}/home" id="logo">Pro Soft</a></h1>
+				<h1><a href="${pageContext.request.contextPath}/home" id="logo"></a></h1>
 				<nav>
 					<ul id="menu">
 						<li><a href="${pageContext.request.contextPath}/home"><span><span>Home</span></span></a></li>
-						<li id="menu_active"><a href="${pageContext.request.contextPath}/experiment"><span><span>Experiment preview</span></span></a></li>
+						<li id="menu_active"><a href="${pageContext.request.contextPath}/404?error"><span><span>Bad request</span></span></a></li>
 						<li class="nav3"><a href="${pageContext.request.contextPath}/support"><span><span>Support</span></span></a></li>
 						<li class="nav4"><a href="${pageContext.request.contextPath}/downloads"><span><span>Downloads</span></span></a></li>
 						<li class="nav5"><a href="${pageContext.request.contextPath}/contacts"><span><span>Contacts</span></span></a></li>

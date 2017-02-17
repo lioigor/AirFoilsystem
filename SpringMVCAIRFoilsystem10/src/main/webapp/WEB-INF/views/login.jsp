@@ -99,7 +99,7 @@
 			<section class="col2">
 				<h2 class="pad_bot1">Autorization...</h2>
 				
-				<c:url var="checkAction" value="j_spring_security_check" ></c:url>
+				<c:url var="checkAction" value="/login/check" ></c:url>
 			<form:form action="${checkAction}" commandName="user">
 		<div class="block1">	
     <br>
@@ -117,7 +117,7 @@
   
     <fieldset id="actions">
         <input type="submit" id="submit" value="Log In">
-        <a href="_spring_security_remember_me">Remember me?</a><a href="${pageContext.request.contextPath}/register">Sign Up</a>
+        <a href="">Forgot password?</a><a href="${pageContext.request.contextPath}/register">Sign Up</a>
     </fieldset>
   
     	</div>
