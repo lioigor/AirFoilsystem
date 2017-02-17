@@ -3,36 +3,19 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page session="false" %>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Measurement results</title>
 
-<title>Log In</title>
-
-<style type="text/css">
-   .block1 { 
-    width: 500px; 
-    background: #f2f2f2;
-    padding: 5px;
-    padding-right: 20px; 
-    border: solid 1px #c2c2c2; 
-     top: 40px; 
-    left: -70px; 
-   }
-    
-   .letter {
-    color: red; 
-    font-size: 150%; 
-   } 
-  
-  </style> 
-
+<meta charset="utf-8">
 
 <link href="<c:url value="/css/style3.css" />" rel="stylesheet" type="text/css" />
 
 <link href="<c:url value="/css/reset.css" />" rel="stylesheet" type="text/css" />
 <link href="<c:url value="/css/style2.css" />" rel="stylesheet" type="text/css" />
 <link href="<c:url value="/css/layout.css" />" rel="stylesheet" type="text/css" />
+
 <script type="text/javascript" src="<c:url value="/js/jquery-1.6.js"/>" ></script>
 <script type="text/javascript" src="<c:url value="/js/cufon-yui.js"/>" ></script>
 <script type="text/javascript" src="<c:url value="/js/cufon-replace.js"/>" ></script>
@@ -42,12 +25,6 @@
 <script type="text/javascript" src="<c:url value="/js/roundabout_shapes.js"/>" ></script>
 <script type="text/javascript" src="<c:url value="/js/jquery.easing.1.2.js"/>" ></script>
 <script type="text/javascript" src="<c:url value="/js/script.js"/>" ></script>
-
-	<link rel="icon" href="http://vladmaxi.net/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="http://vladmaxi.net/favicon.ico" type="image/x-icon">
-	
-	
-</head>
 
 <!--[if lt IE 9]>
 	<script type="text/javascript" src="<c:url value="/js/html5.js"/>"></script>
@@ -61,8 +38,7 @@
 	</div>
 <![endif]-->
 </head>
-
-<body id="page5">
+<body id="page2">
 <div class="body1">
 	<div class="main">
 <!-- header -->
@@ -81,10 +57,8 @@
 				<h1><a href="${pageContext.request.contextPath}/home" id="logo">Pro Soft</a></h1>
 				<nav>
 					<ul id="menu">
-						<li id="menu_active"><a href="${pageContext.request.contextPath}/login"><span><span>Log In</span></span></a></li>
-						
-						<li> <a href="${pageContext.request.contextPath}/home"><span><span>Home</span></span></a></li>
-						<li><a href="${pageContext.request.contextPath}/experiment"><span><span>Experiment</span></span></a></li>
+						<li><a href="${pageContext.request.contextPath}/home"><span><span>Home</span></span></a></li>
+						<li id="menu_active"><a href="${pageContext.request.contextPath}/experiment"><span><span>Experiment preview</span></span></a></li>
 						<li class="nav3"><a href="${pageContext.request.contextPath}/support"><span><span>Support</span></span></a></li>
 						<li class="nav4"><a href="${pageContext.request.contextPath}/downloads"><span><span>Downloads</span></span></a></li>
 						<li class="nav5"><a href="${pageContext.request.contextPath}/contacts"><span><span>Contacts</span></span></a></li>
@@ -92,53 +66,25 @@
 				</nav>
 			</div>
 		</header>
-	
-		<div align="center">
+<!-- content -->
 		<article id="content">
-			
-			<section class="col2">
-				<h2 class="pad_bot1">Autorization...</h2>
-				
-				<c:url var="checkAction" value="j_spring_security_check" ></c:url>
-			<form:form action="${checkAction}" commandName="user">
-		<div class="block1">	
-    <br>
-    
-	
-	
-    <fieldset id="inputs">
-        <form:input path="login" id="username" type="text" placeholder="login"/>  
-        <br> 
-        <form:input path="password" id="password" type="password" placeholder="password"/>
-    </fieldset>
-  <c:if test="${check}"> 
-  <div class="letter">Login or password is not correct!</div>
-  </c:if>
-  
-    <fieldset id="actions">
-        <input type="submit" id="submit" value="Log In">
-        <a href="_spring_security_remember_me">Remember me?</a><a href="${pageContext.request.contextPath}/register">Sign Up</a>
-    </fieldset>
-  
-    	</div>
-	 </form:form>
-       		</section>
+		
+		 <h2>${errorMsg}</h2>
+		 
 		</article>
 	</div>
 </div>
-</div> 
-
 <div class="body2">
-	<div class="main">
-		<article id="content2">
-			<section class="col1">
-				<h3>Newsletter</h3>
-				<form id="newsletter">
-					<div>
+		<div class="main">
+			<article id="content2">
+				<section class="col1">
+					<h3>Newsletter</h3>
+					<form id="newsletter">
+						<div>
 						<div class="bg">
-							<input class="input" type="text" value="Type Your Email Here"  onblur="if(this.value=='') this.value='Type Your Email Here'" onfocus="if(this.value =='Type Your Email Here' ) this.value=''">
+							<input class="input" type="text" value="Type Your Email Here"  onblur="if(this.value=='') this.value='Type Your Email Here'" onFocus="if(this.value =='Type Your Email Here' ) this.value=''">
 						</div>
-						<a href="#" class="button" onclick="document.getElementById('ContactForm').submit()">Subscribe</a>
+						<a href="#" class="button" onClick="document.getElementById('ContactForm').submit()">Subscribe</a>
 					</div>
 				</form>
         	</section>
@@ -153,10 +99,9 @@
 			<section class="col_2">
 				<h3>Follow Us</h3>
 				<ul id="icons">
-				
-					<li><a href="#"><img src="<c:url value="/images/icon1.jpg"/>" alt="">Facebook</a></li>
-					<li><a href="#"><img src="<c:url value="/images/icon2.jpg"/>" alt="">Twitter</a></li>
-					<li><a href="#"><img src="<c:url value="/images/icon3.jpg"/>" alt="">LinkedIn</a></li>
+					<li><a href="#"><img src="images/icon1.jpg" alt="">Facebook</a></li>
+					<li><a href="#"><img src="images/icon2.jpg" alt="">Twitter</a></li>
+					<li><a href="#"><img src="images/icon3.jpg" alt="">LinkedIn</a></li>
 				</ul>
         	</section>
 			<section class="col_1">
