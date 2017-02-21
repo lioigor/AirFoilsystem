@@ -1,23 +1,17 @@
 package com.lioigor22.service;
 
-import java.util.List;
-
 import com.lioigor22.objects.User;
+
+/**
+ * Service class for {@link net.proselyte.springsecurityapp.model.User}
+ *
+ * @author Eugene Suleimanov
+ * @version 1.0
+ */
 
 public interface UserService {
 
-	public void addUser(User user);
+	void save(User user);
 
-	public void updateUser(User user);
-
-	public List<User> listUsers();
-
-	public User getUserById(int id);
-
-	public void removeUser(int id);
-
-	public boolean checkUser(User user);
-
-	public boolean checkLogin(User user);
-
+	User findByUsername(String username);
 }

@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Measurement results</title>
+<title>No access!</title>
 
 <meta charset="utf-8">
 
@@ -58,7 +58,7 @@
 				<nav>
 					<ul id="menu">
 						<li><a href="${pageContext.request.contextPath}/home"><span><span>Home</span></span></a></li>
-						<li id="menu_active"><a href="${pageContext.request.contextPath}/experiment"><span><span>Experiment preview</span></span></a></li>
+						<li id="menu_active"><a href="${pageContext.request.contextPath}/accessDenied?error"><span><span>Access denied</span></span></a></li>
 						<li class="nav3"><a href="${pageContext.request.contextPath}/support"><span><span>Support</span></span></a></li>
 						<li class="nav4"><a href="${pageContext.request.contextPath}/downloads"><span><span>Downloads</span></span></a></li>
 						<li class="nav5"><a href="${pageContext.request.contextPath}/contacts"><span><span>Contacts</span></span></a></li>
