@@ -49,7 +49,7 @@
 					<ul id="top_nav">
 						<li><a href="${pageContext.request.contextPath}/support">Support</a></li>
 						<li><a href="${pageContext.request.contextPath}/login">Log In</a></li>
-						<li><a href="${pageContext.request.contextPath}/register">Sign Up</a></li>
+						<li><a href="${pageContext.request.contextPath}/registration">Sign Up</a></li>
 						
 						<c:if test="${check}"> 
 						<li class="end"><a>You have successfully authorized!</a></li>

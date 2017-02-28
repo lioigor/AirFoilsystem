@@ -9,7 +9,6 @@
 
     <http auto-config="true">
         <intercept-url pattern="/downloads" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
-        <intercept-url pattern="/welcome" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
         <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
 
         <form-login login-page="/login" default-target-url="/home" authentication-failure-url="/login?error"

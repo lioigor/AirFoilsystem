@@ -60,7 +60,7 @@
 					<ul id="top_nav">
 						<li><a href="${pageContext.request.contextPath}/support">Support</a></li>
 						<li><a href="${pageContext.request.contextPath}/login">Log In</a></li>
-						<li class="end"><a href="${pageContext.request.contextPath}/register">Sign Up</a></li>
+						<li class="end"><a href="${pageContext.request.contextPath}/registration">Sign Up</a></li>
 					</ul>
 				</nav>
 				<span class="date">Monday, June 6, 2011  &nbsp; &nbsp; 17:19</span>
@@ -83,40 +83,37 @@
 		</header>
 		
 		<div align="center">
-		<article id="content">
-			<section class="col1">
-				
-			</section>
-			<section class="col2">
-				<h2 class="pad_bot1">Enter your personal information</h2>
+		div class="container">
 
-	<c:url var="addAction" value="/login/add" ></c:url>
-			<form:form action="${addAction}" commandName="user">
-		<div class="block1">	
-    <br>
-    
-    <fieldset id="inputs">
-    
-    	Your name: <br> <form:input path="name" id="name" type="text" placeholder="name"/>        
-        <br> 
-        Your surname: <br> <form:input path="surname" id="surname" type="text" placeholder="surname"/>     
-        <br> 
-        Choose login: <br> <form:input path="login" id="username" type="text" placeholder="login" />  
-        <br> 
-        Choose password: <br> <form:input path="password" id="password" type="password" placeholder="password"/>
-    </fieldset>
-  <c:if test="${check}"> 
-  <div class="letter">Sorry but this login is already use, choose another!</div>
-  </c:if>
-  
-    <fieldset id="actions">
-        <input type="submit" id="submit" value="Sign Up">
-    </fieldset>
-  
-    	</div>
-	 </form:form>
-       		</section>
-		</article>
+    <form:form method="POST" modelAttribute="userForm" class="form-signin">
+        <h2 class="form-signin-heading">Create your account</h2>
+        <spring:bind path="username">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="username" class="form-control" placeholder="Username"
+                            autofocus="true"></form:input>
+                <form:errors path="username"></form:errors>
+            </div>
+        </spring:bind>
+
+        <spring:bind path="password">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="password" path="password" class="form-control" placeholder="Password"></form:input>
+                <form:errors path="password"></form:errors>
+            </div>
+        </spring:bind>
+
+        <spring:bind path="confirmPassword">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="password" path="confirmPassword" class="form-control"
+                            placeholder="Confirm your password"></form:input>
+                <form:errors path="confirmPassword"></form:errors>
+            </div>
+        </spring:bind>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </form:form>
+
+</div>
 		</div>
 	</div>
 </div>
