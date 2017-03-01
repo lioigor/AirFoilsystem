@@ -62,7 +62,7 @@
 
 					</ul>
 										 <c:if test="${pageContext.request.userPrincipal.name != null}">
-        <form id="logoutForm" method="POST" action="/login?logout">
+        <form id="logoutForm" method="POST" action="${contextPath}/login?logout">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
 
