@@ -51,13 +51,25 @@
 						<li><a href="${pageContext.request.contextPath}/login">Log In</a></li>
 						<li><a href="${pageContext.request.contextPath}/registration">Sign Up</a></li>
 						
-						<c:if test="${check}"> 
-						<li class="end"><a>You have successfully authorized!</a></li>
-  						</c:if>
-  						<c:if test="${regsuccess}"> 
-						<li class="end"><a>You have successfully signed up!</a></li>
-  						</c:if>
+<%-- 						<c:if test="${check}">  --%>
+<!-- 						<li class="end"><a>You have successfully authorized!</a></li> -->
+<%--   						</c:if> --%>
+<%--   						<c:if test="${regsuccess}">  --%>
+<!-- 						<li class="end"><a>You have successfully signed up!</a></li> -->
+<%--   						</c:if> --%>
+						
+		
+
 					</ul>
+										 <c:if test="${pageContext.request.userPrincipal.name != null}">
+        <form id="logoutForm" method="POST" action="/login?logout">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </form>
+
+        ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
+        
+
+    </c:if>
 						
 				</nav>
 				<span class="date">Monday, June 6, 2011  &nbsp; &nbsp; 17:19</span>
