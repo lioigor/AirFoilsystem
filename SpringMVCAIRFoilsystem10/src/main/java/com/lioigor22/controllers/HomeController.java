@@ -35,7 +35,8 @@ public class HomeController {
 		ModelAndView model = new ModelAndView();
 
 		if (user != null) {
-			model.addObject("errorMsg", user.getName() + "you do not have access to this page!");
+			model.addObject("username", user.getName());
+			model.addObject("errorMsg", " you do not have access to this page!");
 		} else {
 			model.addObject("errorMsg", "You do not have access to this page!");
 		}

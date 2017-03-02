@@ -38,24 +38,34 @@
 	</div>
 <![endif]-->
 </head>
-<body id="page2">
-<div class="body1">
-	<div class="main">
-<!-- header -->
-		<header>
-			<div class="wrapper">
-				<nav>
-					<ul id="top_nav">
+<body id="page5">
+	<div class="body1">
+		<div class="main">
+			<!-- header -->
+			<header>
+				<div class="wrapper">
+					<nav>
+						<ul id="top_nav">					
+		<c:if test="${pageContext.request.userPrincipal.name != null}">
+        	<form id="logoutForm" method="POST" action="${pageContext.request.contextPath}/logout">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        	</form>
+			<font color="green">${pageContext.request.userPrincipal.name}</font> | <a onclick="document.forms['logoutForm'].submit()"><font color="red">Sign out</font></a>
+        	</c:if>
 						<li><a href="${pageContext.request.contextPath}/support">Support</a></li>
 						<li><a href="${pageContext.request.contextPath}/login">Log In</a></li>
-						<li class="end"><a href="${pageContext.request.contextPath}/register">Sign Up</a></li>
+						<li><a href="${pageContext.request.contextPath}/registration">Sign Up</a></li>
+
 					</ul>
-				</nav>
-				<span class="date">Monday, June 6, 2011  &nbsp; &nbsp; 17:19</span>
-			</div>
-			<div class="wrapper">
-				<h1><a href="${pageContext.request.contextPath}/home" id="logo"></a></h1>
-				<nav>
+					</nav>
+					<span class="date">Monday, June 6, 2016 &nbsp; &nbsp; 17:19</span>
+				</div>
+				<div class="wrapper">
+					<h1>
+						<a href="${pageContext.request.contextPath}/home" id="logo">Pro
+							Soft</a>
+					</h1>
+					<nav>
 					<ul id="menu">
 						<li><a href="${pageContext.request.contextPath}/home"><span><span>Home</span></span></a></li>
 						<li id="menu_active"><a href="${pageContext.request.contextPath}/404?error"><span><span>Bad request</span></span></a></li>

@@ -44,7 +44,7 @@ public class AutorizationController {
 
 		securityService.autoLogin(userForm.getUsername(), userForm.getConfirmPassword());
 
-		return "redirect:/welcome";
+		return "redirect:/home";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -60,13 +60,4 @@ public class AutorizationController {
 		return "login";
 	}
 
-	// @RequestMapping(value = { "/", "/welcome" }, method = RequestMethod.GET)
-	// public String welcome(Model model) {
-	// return "welcome";
-	// }
-
-	@RequestMapping(value = "/admin", method = RequestMethod.GET)
-	public String admin(Model model) {
-		return "admin";
-	}
 }

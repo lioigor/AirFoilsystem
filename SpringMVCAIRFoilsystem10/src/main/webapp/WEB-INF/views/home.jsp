@@ -38,7 +38,6 @@
 </head>
 <%-- 	<jsp:include page="introduction.jsp" />	 --%>
 	
-	
 <body id="page1">
 <div class="body1">
 	<div class="main">
@@ -46,30 +45,19 @@
 		<header>
 			<div class="wrapper">
 				<nav>
-					<ul id="top_nav">
+					<ul id="top_nav">					
+		<c:if test="${pageContext.request.userPrincipal.name != null}">
+        	<form id="logoutForm" method="POST" action="${pageContext.request.contextPath}/logout">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        	</form>
+			<font color="green">${pageContext.request.userPrincipal.name}</font> | <a onclick="document.forms['logoutForm'].submit()"><font color="red">Sign out</font></a>
+        	</c:if>
 						<li><a href="${pageContext.request.contextPath}/support">Support</a></li>
 						<li><a href="${pageContext.request.contextPath}/login">Log In</a></li>
 						<li><a href="${pageContext.request.contextPath}/registration">Sign Up</a></li>
-						
-<%-- 						<c:if test="${check}">  --%>
-<!-- 						<li class="end"><a>You have successfully authorized!</a></li> -->
-<%--   						</c:if> --%>
-<%--   						<c:if test="${regsuccess}">  --%>
-<!-- 						<li class="end"><a>You have successfully signed up!</a></li> -->
-<%--   						</c:if> --%>
-						
-		
 
 					</ul>
-										 <c:if test="${pageContext.request.userPrincipal.name != null}">
-        <form id="logoutForm" method="POST" action="${contextPath}/login?logout">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        </form>
-
-        ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
-        
-
-    </c:if>
+		
 						
 				</nav>
 				<span class="date">Monday, June 6, 2011  &nbsp; &nbsp; 17:19</span>
