@@ -39,4 +39,5 @@
 	<tx:annotation-driven />
 
 	<jpa:repositories base-package="com.lioigor22.dao" />
+
 </beans>
