@@ -2,18 +2,21 @@ package com.lioigor22.dao;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import com.lioigor22.objects.Experiment;
 
-public interface ExperimentDAO {
+public interface ExperimentDAO extends JpaRepository<Experiment, Long> {
 
-	public void addExperiment(Experiment p);
+	public void add(Experiment p);
 
-	public void updateExperiment(Experiment p);
+	public void update(Experiment p);
 
-	public List<Experiment> listExperiments();
+	@Override
+	public List<Experiment> findAll();
 
-	public Experiment getExperimentById(int id);
+	public Experiment getById(Long id);
 
-	public void removeExperiment(int id);
+	public void removeById(Long id);
 
 }

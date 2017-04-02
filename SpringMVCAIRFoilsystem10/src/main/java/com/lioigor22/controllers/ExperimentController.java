@@ -34,14 +34,14 @@ public class ExperimentController {
 	@RequestMapping(value = "/experiments", method = RequestMethod.GET)
 	public String listExperiments(Model model) {
 		model.addAttribute("experiment", new Experiment());
-		model.addAttribute("listExperiments", this.experimentService.listExperiments());
+		model.addAttribute("listExperiments", this.experimentService.findAll());
 		return "experiment";
 	}
 
 	@RequestMapping(value = "/experiments", method = RequestMethod.POST)
 	public String existingExperiments(Model model) {
 		model.addAttribute("experiment", new Experiment());
-		model.addAttribute("listExperiments", this.experimentService.listExperiments());
+		model.addAttribute("listExperiments", this.experimentService.findAll());
 		return "experiment";
 	}
 
@@ -51,10 +51,10 @@ public class ExperimentController {
 
 		if (p.getId() == 0) {
 			// new experiment, add it
-			this.experimentService.addExperiment(p);
+			this.experimentService.add(p);
 		} else {
 			// existing experiment, call update
-			this.experimentService.updateExperiment(p);
+			this.experimentService.update(p);
 		}
 
 		return "redirect:/experiments";
@@ -62,16 +62,16 @@ public class ExperimentController {
 	}
 
 	@RequestMapping("/remove/{id}")
-	public String removeExperiment(@PathVariable("id") int id) {
+	public String removeExperiment(@PathVariable("id") Long id) {
 
-		this.experimentService.removeExperiment(id);
+		this.experimentService.removeById(id);
 		return "redirect:/experiments";
 	}
 
 	@RequestMapping("/edit/{id}")
-	public String editExperiment(@PathVariable("id") int id, Model model) {
-		model.addAttribute("experiment", this.experimentService.getExperimentById(id));
-		model.addAttribute("listExperiments", this.experimentService.listExperiments());
+	public String editExperiment(@PathVariable("id") Long id, Model model) {
+		model.addAttribute("experiment", this.experimentService.getById(id));
+		model.addAttribute("listExperiments", this.experimentService.findAll());
 		return "experiment";
 	}
 

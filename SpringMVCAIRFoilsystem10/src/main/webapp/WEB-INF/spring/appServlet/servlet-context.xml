@@ -10,7 +10,7 @@
 
     <import resource="appconfig-data.xml"/>
     
-    <import resource="appconfig-data-hibernate4.xml"/>
+<!--     <import resource="appconfig-data-hibernate4.xml"/> -->
    
     <import resource="appconfig-security.xml"/>
 

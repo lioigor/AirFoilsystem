@@ -6,14 +6,14 @@ import com.lioigor22.objects.Experiment;
 
 public interface ExperimentService {
 
-	public void addExperiment(Experiment p);
+	public void add(Experiment p);
 
-	public void updateExperiment(Experiment p);
+	public void update(Experiment p);
 
-	public List<Experiment> listExperiments();
+	public List<Experiment> findAll();
 
-	public Experiment getExperimentById(int id);
+	public Experiment getById(Long id);
 
-	public void removeExperiment(int id);
+	public void removeById(Long id);
 
 }

@@ -21,29 +21,37 @@ public class Experiment {
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 
+	@Column(name = "name")
 	private String name;
 
+	@Column(name = "temperature")
 	private double temperature;
 
+	@Column(name = "pressure")
 	private double pressure;
 
+	@Column(name = "flowVelocity")
 	private int flowVelocity;
 
+	@Column(name = "kinematicViscosity")
 	private double kinematicViscosity;
 
+	@Column(name = "diameterOfProbes")
 	private double diameterOfProbes;
 
+	@Column(name = "tubeSize")
 	private double tubeSize;
 
+	@Column(name = "powerEngine")
 	private double powerEngine;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -109,68 +117,6 @@ public class Experiment {
 
 	public void setPowerEngine(double powerEngine) {
 		this.powerEngine = powerEngine;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		long temp;
-		temp = Double.doubleToLongBits(diameterOfProbes);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + flowVelocity;
-		result = prime * result + id;
-		temp = Double.doubleToLongBits(kinematicViscosity);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		temp = Double.doubleToLongBits(powerEngine);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(pressure);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(temperature);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(tubeSize);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Experiment other = (Experiment) obj;
-		if (Double.doubleToLongBits(diameterOfProbes) != Double.doubleToLongBits(other.diameterOfProbes))
-			return false;
-		if (flowVelocity != other.flowVelocity)
-			return false;
-		if (id != other.id)
-			return false;
-		if (Double.doubleToLongBits(kinematicViscosity) != Double.doubleToLongBits(other.kinematicViscosity))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (Double.doubleToLongBits(powerEngine) != Double.doubleToLongBits(other.powerEngine))
-			return false;
-		if (Double.doubleToLongBits(pressure) != Double.doubleToLongBits(other.pressure))
-			return false;
-		if (Double.doubleToLongBits(temperature) != Double.doubleToLongBits(other.temperature))
-			return false;
-		if (Double.doubleToLongBits(tubeSize) != Double.doubleToLongBits(other.tubeSize))
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Experiment [id=" + id + ", name=" + name + ", temperature=" + temperature + ", pressure=" + pressure + ", flowVelocity=" + flowVelocity + ", kinematicViscosity=" + kinematicViscosity + ", diameterOfProbes=" + diameterOfProbes
-				+ ", tubeSize=" + tubeSize + ", powerEngine=" + powerEngine + "]";
 	}
 
 }
