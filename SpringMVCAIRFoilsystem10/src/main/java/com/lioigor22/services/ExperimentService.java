@@ -1,4 +1,4 @@
-package com.lioigor22.service;
+package com.lioigor22.services;
 
 import java.util.List;
 

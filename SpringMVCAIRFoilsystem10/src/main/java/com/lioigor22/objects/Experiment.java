@@ -47,6 +47,32 @@ public class Experiment {
 	@Column(name = "powerEngine")
 	private double powerEngine;
 
+	public Experiment() {
+		super();
+		this.id = new Long(0);
+		this.name = "";
+		this.temperature = 0.0;
+		this.pressure = 0.0;
+		this.flowVelocity = 0;
+		this.kinematicViscosity = 0.0;
+		this.diameterOfProbes = 0.0;
+		this.tubeSize = 0.0;
+		this.powerEngine = 0.0;
+	}
+
+	public Experiment(Long id, String name, double temperature, double pressure, int flowVelocity, double kinematicViscosity, double diameterOfProbes, double tubeSize, double powerEngine) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.temperature = temperature;
+		this.pressure = pressure;
+		this.flowVelocity = flowVelocity;
+		this.kinematicViscosity = kinematicViscosity;
+		this.diameterOfProbes = diameterOfProbes;
+		this.tubeSize = tubeSize;
+		this.powerEngine = powerEngine;
+	}
+
 	public Long getId() {
 		return id;
 	}

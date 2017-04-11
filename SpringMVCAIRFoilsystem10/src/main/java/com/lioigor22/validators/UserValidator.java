@@ -7,13 +7,13 @@ import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.lioigor22.objects.User;
-import com.lioigor22.service.UserService;
+import com.lioigor22.services.UserService;
 
 /**
- * Validator for {@link net.proselyte.springsecurityapp.model.User} class,
- * implements {@link Validator} interface.
+ * Validator for {@link com.lioigor22.objects.User} class, implements
+ * {@link Validator} interface.
  *
- * @author Eugene Suleimanov
+ * @author Igor Likarenko
  * @version 1.0
  */
 

@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.lioigor22.objects.User;
-import com.lioigor22.service.SecurityService;
-import com.lioigor22.service.UserService;
+import com.lioigor22.services.SecurityService;
+import com.lioigor22.services.UserService;
 import com.lioigor22.validators.UserValidator;
 
 @Controller

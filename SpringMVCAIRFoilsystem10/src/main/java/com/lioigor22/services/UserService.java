@@ -1,11 +1,11 @@
-package com.lioigor22.service;
+package com.lioigor22.services;
 
 import com.lioigor22.objects.User;
 
 /**
- * Service class for {@link net.proselyte.springsecurityapp.model.User}
+ * Service class for {@link com.lioigor22.objects.User}
  *
- * @author Eugene Suleimanov
+ * @author Igor Likarenko
  * @version 1.0
  */
 

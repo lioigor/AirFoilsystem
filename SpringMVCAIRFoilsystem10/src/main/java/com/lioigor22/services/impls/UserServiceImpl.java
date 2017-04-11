@@ -1,4 +1,4 @@
-package com.lioigor22.service;
+package com.lioigor22.services.impls;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,11 +11,12 @@ import com.lioigor22.dao.RoleDao;
 import com.lioigor22.dao.UserDao;
 import com.lioigor22.objects.Role;
 import com.lioigor22.objects.User;
+import com.lioigor22.services.UserService;
 
 /**
  * Implementation of {@link UserService} interface.
  *
- * @author Eugene Suleimanov
+ * @author Igor Likarenko
  * @version 1.0
  */
 

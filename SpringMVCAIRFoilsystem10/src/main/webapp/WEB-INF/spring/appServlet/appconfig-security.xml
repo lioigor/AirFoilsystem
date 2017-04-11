@@ -11,7 +11,7 @@
 	<access-denied-handler error-page="/accessDenied"/>
 		<intercept-url pattern="/downloads"
 			access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
-		<intercept-url pattern="/contacts" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/experiment" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
 
 		<form-login login-page="/login" default-target-url="/home"
 			authentication-failure-url="/login?error" username-parameter="username"
@@ -46,7 +46,7 @@
 	</authentication-manager>
 
 	<beans:bean id="userDetailsServiceImpl"
-		class="com.lioigor22.service.UserDetailsServiceImpl"></beans:bean>
+		class="com.lioigor22.services.UserDetailsServiceImpl"></beans:bean>
 
 	<beans:bean id="encoder"
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">

@@ -1,4 +1,4 @@
-package com.lioigor22.service;
+package com.lioigor22.services;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -20,7 +20,7 @@ import com.lioigor22.objects.User;
  * {@link org.springframework.security.core.userdetails.UserDetailsService}
  * interface.
  *
- * @author Eugene Suleimanov
+ * @author Igor Likarenko
  * @version 1.0
  */
 

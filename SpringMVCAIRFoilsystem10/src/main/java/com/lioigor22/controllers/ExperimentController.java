@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.lioigor22.objects.Experiment;
-import com.lioigor22.service.ExperimentService;
+import com.lioigor22.services.ExperimentService;
 
 @Controller
 public class ExperimentController {
 
+	@Autowired
 	private ExperimentService experimentService;
 
 	@RequestMapping(value = { "/experiment" }, method = RequestMethod.GET)
@@ -25,7 +26,6 @@ public class ExperimentController {
 		return "experiment";
 	}
 
-	@Autowired(required = true)
 	@Qualifier(value = "experimentService")
 	public void setExperimentService(ExperimentService ps) {
 		this.experimentService = ps;
@@ -47,14 +47,14 @@ public class ExperimentController {
 
 	// For add and update experiment both
 	@RequestMapping(value = "/experiment/add", method = RequestMethod.POST)
-	public String addExperiment(@ModelAttribute("experiment") Experiment p) {
+	public String addExperiment(@ModelAttribute("experiment") Experiment exp) {
 
-		if (p.getId() == 0) {
+		if (exp.getId() == 0) {
 			// new experiment, add it
-			this.experimentService.add(p);
+			this.experimentService.add(exp);
 		} else {
 			// existing experiment, call update
-			this.experimentService.update(p);
+			this.experimentService.update(exp);
 		}
 
 		return "redirect:/experiments";
@@ -72,6 +72,7 @@ public class ExperimentController {
 	public String editExperiment(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("experiment", this.experimentService.getById(id));
 		model.addAttribute("listExperiments", this.experimentService.findAll());
+
 		return "experiment";
 	}
 
