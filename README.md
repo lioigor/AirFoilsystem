@@ -11,3 +11,4 @@ Container: GlassFish(Tomcat)
 
 Tools: Maven, Eclipse
 
+See details: https://github.com/lioigor/AirFoilsystem/wiki
