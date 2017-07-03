@@ -5,7 +5,7 @@ This is the realization of my own startup project.
 
 Front-end: HTML, CSS, JavaScript 
 
-Back-end: JSP, Servlets, MySQL, jUnit Spring(MVC, Data, Security), Hibernate
+Back-end: JSP, Servlets, MySQL, jUnit, Spring(MVC, Data, Security), Hibernate
 
 Container: GlassFish(Tomcat)
 
